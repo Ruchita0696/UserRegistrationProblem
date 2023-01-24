@@ -7,6 +7,7 @@
             UserRegistation user = new UserRegistation();
             user.UserInputName();
             user.Email();
+            user.MobileNumber();
         }
     }
 }

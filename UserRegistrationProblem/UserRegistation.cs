@@ -59,5 +59,23 @@ namespace UserRegistrationProblem
                 Email();
             }
         }
+        public void MobileNumber()
+        {
+            Console.Write("Enter Mobile Number with Country Code and Space between them : ");
+            string mobileNumber = Console.ReadLine();
+            Regex number = new Regex(@"^*[+][1-9]{1,3}\s[1-9]{1}[0-9]{9}$");
+            bool matches = number.IsMatch(mobileNumber);
+            if (matches == true)
+            {
+                pass = true;
+                Console.WriteLine($"{mobileNumber} is Valid Mobile Number");
+                return;
+            }
+            else
+            {
+                Console.WriteLine($"Please Enter Valid Mobile Number {mobileNumber}");
+                MobileNumber();
+            }
+        }
     }
 }
