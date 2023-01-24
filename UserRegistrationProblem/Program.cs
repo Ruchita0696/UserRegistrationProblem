@@ -8,6 +8,7 @@
             user.UserInputName();
             user.Email();
             user.MobileNumber();
+            user.PassWord();
         }
     }
 }

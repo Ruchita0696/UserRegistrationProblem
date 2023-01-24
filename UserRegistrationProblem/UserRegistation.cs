@@ -77,5 +77,21 @@ namespace UserRegistrationProblem
                 MobileNumber();
             }
         }
+        public void PassWord()
+        {
+            Console.WriteLine("Enter Password Contains 8 Characters : ");
+            string password = Console.ReadLine();
+            Regex pass = new Regex("^[A-za-z0-9]{8,}");
+            bool matches = pass.IsMatch(password);
+            if (matches == true)
+            {
+                Console.WriteLine($"{password} is Valid Password");
+            }
+            else
+            {
+                Console.WriteLine($"Please Enter Valid Password {password}");
+                PassWord();
+            }
+        }
     }
 }
