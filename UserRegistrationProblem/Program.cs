@@ -9,7 +9,7 @@
             user.Email();
             user.MobileNumber();
             user.PassWord();
-            user.SampleEmail();
+           
         }
     }
 }

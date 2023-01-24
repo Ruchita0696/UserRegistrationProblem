@@ -37,7 +37,7 @@ namespace UserRegistrationProblem
             }
             else
             {
-                Console.WriteLine($"Please Enter Valid Name {Name}");
+                Console.WriteLine($"Please Enter Valid name {Name}");
                 UserInputName();
             }
         }
@@ -49,9 +49,9 @@ namespace UserRegistrationProblem
             bool matches = emailID.IsMatch(email);
             if (matches == true)
             {
-                pass = true;
+                
                 Console.WriteLine($"{email} is Valid Email");
-                return;
+              
             }
             else
             {
@@ -67,9 +67,9 @@ namespace UserRegistrationProblem
             bool matches = number.IsMatch(mobileNumber);
             if (matches == true)
             {
-                pass = true;
+                
                 Console.WriteLine($"{mobileNumber} is Valid Mobile Number");
-                return;
+                
             }
             else
             {
@@ -81,7 +81,7 @@ namespace UserRegistrationProblem
         {
             Console.WriteLine("Enter Password Contains 8 Characters : ");
             string password = Console.ReadLine();
-            Regex pass = new Regex("^[A-za-z0-9]{8,}");
+            Regex pass = new Regex("^(?=.*[a-z])(?=.*[A-Z]).{8,}$");
             bool matches = pass.IsMatch(password);
             if (matches == true)
             {
@@ -93,22 +93,6 @@ namespace UserRegistrationProblem
                 PassWord();
             }
         }
-        public void SampleEmail()
-        {
-            Console.Write("Enter Email Id Given in Chart : ");
-            string emailID = Console.ReadLine();
-            Regex email = new Regex(@"^(abc)([_\+\-\.]{0,1}[a-zA-Z0-9])*[@][a-z0-9]{1,} *[.][a-z]{2,}[\.\,]{0,}[a-z]{0,}$");
-            bool matches = email.IsMatch(emailID);
-
-            if (matches == true)
-            {
-                Console.WriteLine($"{emailID} is Valid Email ID");
-            }
-            else
-            {
-                Console.WriteLine($"Please Enter Valid Email ID {emailID}");
-                SampleEmail();
-            }
-        }
+       
     }
 }
