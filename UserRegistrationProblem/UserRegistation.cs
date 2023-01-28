@@ -91,5 +91,21 @@ namespace UserRegistrationProblem
                 PassWord();
             }
         }  
+        public void SampleEmail()
+        {
+            Console.WriteLine("Enter Email ID Given in Chart : ");
+            string emailID = Console.ReadLine();
+            Regex email = new Regex(@"^(abc)([_\+\-\.]{0,1}[a-zA-Z0-9])*[@][a-z0-9]{1,}*[.][a-z]{2,}[\.\,]{0}[a-z]{0,}$");
+            bool matches = email.IsMatch(emailID);
+            if (matches == true)
+            {
+                Console.WriteLine($"{emailID} is Vaild Email ID");
+            }
+            else
+            {
+                Console.WriteLine($"Please Enter VAlid Email ID {emailID}");
+                SampleEmail();
+            }
+        }
     }
 }
