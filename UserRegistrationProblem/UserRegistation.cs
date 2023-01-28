@@ -48,10 +48,8 @@ namespace UserRegistrationProblem
             Regex emailID = new Regex(@"^(abc)[a-zA-Z0-9_\+\-\.]*[@](bl)*[.](co)*[.][a-z]{2}$");
             bool matches = emailID.IsMatch(email);
             if (matches == true)
-            {
-                
+            { 
                 Console.WriteLine($"{email} is Valid Email");
-              
             }
             else
             {
@@ -81,7 +79,7 @@ namespace UserRegistrationProblem
         {
             Console.WriteLine("Enter Password Contains 8 Characters : ");
             string password = Console.ReadLine();
-            Regex pass = new Regex(@"^(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+            Regex pass = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z].{8,}$");
             bool matches = pass.IsMatch(password);
             if (matches == true)
             {
@@ -92,7 +90,6 @@ namespace UserRegistrationProblem
                 Console.WriteLine($"Please Enter Valid Password {password}");
                 PassWord();
             }
-        }
-       
+        }  
     }
 }
